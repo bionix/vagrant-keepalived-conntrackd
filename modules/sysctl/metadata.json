@@ -1,0 +1,31 @@
+{
+  "project_page": "https://github.com/thias/puppet-sysctl",
+  "license": "Apache 2.0",
+  "source": "git://github.com/thias/puppet-sysctl",
+  "checksums": {
+    "spec/classes/sysctl_base_spec.rb": "6241cf3e290871c00b1bb3bbd5490108",
+    "Gemfile": "3ad486d60d90bfe4395b368b95481e01",
+    "spec/defines/sysctl_init_spec.rb": "21d524df70961750cb22f6b83349093e",
+    "tests/base.pp": "1ba89838432dbc94339097327c19ae3d",
+    "LICENSE": "99219472697a01561e7630d63aaecdc1",
+    "manifests/init.pp": "41b19ea0f34a8bf28a8dde64e603dc61",
+    "Rakefile": "ab253b919e7093c2a5eb7adf0e39ffbc",
+    "Modulefile": "6e0f515e14e821ae5cf58ee68f7b6501",
+    "ChangeLog": "9f714fe35be5e989835a3fa13a539c3c",
+    "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+    "manifests/base.pp": "eba4c30fb496594183d1355b92d2264e",
+    "tests/init.pp": "e70e5327b9840b44699bb7fae71d47cd",
+    "README.md": "b5b9fcdb28923e429112839d2eb6e47f"
+  },
+  "description": "Manage sysctl variable values.",
+  "version": "0.1.1",
+  "types": [
+
+  ],
+  "summary": "Sysctl module",
+  "name": "thias-sysctl",
+  "author": "Matthias Saou",
+  "dependencies": [
+
+  ]
+}

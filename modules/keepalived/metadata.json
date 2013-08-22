@@ -1,0 +1,45 @@
+{
+  "name": "arioch-keepalived",
+  "version": "0.0.2",
+  "source": "UNKNOWN",
+  "author": "Tom De Vylder",
+  "license": "Apache License, Version 2.0",
+  "summary": "Keepalived module",
+  "description": "Keepalived vrrp and lvs failover module",
+  "project_page": "http://arioch.github.io/puppet-keepalived/",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.0.0"
+    },
+    {
+      "name": "ripienaar/concat",
+      "version_requirement": ">= 0.2.0"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Gemfile": "c0514114217ed57cd72fd797a1e68cba",
+    "Gemfile.lock": "8aa6d4bffd0ea3a4c99933c8ae6b718c",
+    "LICENSE": "1906cc9accb05dcaf61c8cda63402170",
+    "Modulefile": "a90ad41eb1c354b8f315c54886fa9107",
+    "README.md": "9399882aba68c9e604869f41fe2c6d79",
+    "Rakefile": "f066ceb93f901a7695e6c7644bb96783",
+    "manifests/config.pp": "26dcc6cd91b9f7259cf454daa6cbacfb",
+    "manifests/init.pp": "69586a79eb3171ec755dd5de2877ea7c",
+    "manifests/install.pp": "8dc4294b7443e76fb88f2ab8cc754ecd",
+    "manifests/params.pp": "1c3f9dac6570ad26c4021f95291574f0",
+    "manifests/service.pp": "e9c462ec5823f245d74a5e80c098f008",
+    "manifests/vrrp/instance.pp": "5ba875825564409a9834d42c044fe2c4",
+    "manifests/vrrp/script.pp": "3dd800606b6b6afeaf737ad0de80aa0a",
+    "spec/classes/keepalived_spec.rb": "324f6f8af468f8aaecdbb6383b35c37a",
+    "spec/defines/keepalived_vrrp_instance_spec.rb": "54a32255020cdb7b181cfcbe0ee8783a",
+    "spec/defines/keepalived_vrrp_script_spec.rb": "02c30e0fac190355c28934a95ab5632e",
+    "spec/spec.opts": "e6d22f7dc7d9c1db75a1b58e490176c4",
+    "spec/spec_helper.rb": "9936deb4c4a14abcbe51e230488c9ef3",
+    "templates/vrrp_instance.erb": "5736baa8bd1bd6b4ed63287747a30ecd",
+    "templates/vrrp_script.erb": "824dfdc089a7bd360f359ec3e6f2a94b"
+  }
+}
