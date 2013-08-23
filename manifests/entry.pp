@@ -1,15 +1,3 @@
-exec { "apt-get update":
-    command => "/usr/bin/apt-get update",
-    onlyif => "/bin/sh -c '[ ! -f /var/cache/apt/pkgcache.bin ] || /usr/bin/find /etc/apt/* -cnewer /var/cache/apt/pkgcache.bin | /bin/grep . > /dev/null'",
-}
-
-
-Package { ensure => "installed" }
-
-$packages = [ "conntrackd" ]
-package { $packages: }
-
-
 node /entry1/ {
   include keepalived
 
@@ -30,7 +18,19 @@ node /entry1/ {
   }
 
   keepalived::vrrp::sync_group { 'VG_1':
-    members => ['VI_50', 'VI_55']
+    members => ['VI_50', 'VI_55'],
+    notify_master => "/etc/conntrackd/primary-backup.sh primary",
+    notify_backup => "/etc/conntrackd/primary-backup.sh backup",
+    notify_fault => "/etc/conntrackd/primary-backup.sh fault",
+  }
+
+
+  class { "conntrackd::config":
+      protocol => 'UDP',
+      sync_mode => 'ALARM',
+      interface => 'eth2',
+      ipv4_address => '192.168.55.1',
+      udp_ipv4_dest => '192.168.55.2',
   }
 }
 
@@ -54,12 +54,30 @@ node /entry2/ {
   }
 
   keepalived::vrrp::sync_group { 'VG_1':
-    members => ['VI_50', 'VI_55']
+    members => ['VI_50', 'VI_55'],
+    notify_master => "/etc/conntrackd/primary-backup.sh primary",
+    notify_backup => "/etc/conntrackd/primary-backup.sh backup",
+    notify_fault => "/etc/conntrackd/primary-backup.sh fault",
+  }
+   
+  class { "conntrackd::config":
+      protocol => 'UDP',
+      interface => 'eth2',
+      sync_mode => 'ALARM',
+      ipv4_address => '192.168.55.2',
+      udp_ipv4_dest => '192.168.55.1',
   }
 
 
 }
 
+
+file { "/etc/conntrackd/primary-backup.sh":
+    source  => "puppet:///modules/conntrackd/primary-backup.sh",
+            owner   => root,
+            group   => root,
+            mode    => 0755,
+}
 
 
 # set up our firewall
