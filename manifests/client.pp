@@ -12,5 +12,6 @@ network_route { '192.168.55.0':
 }
 
 exec { "IFACE=eth1 VERBOSITY=1 MODE=start bash /etc/network/if-up.d/20static-routes":
-    provider => 'shell'
+    provider => 'shell',
+     require => Package['ifupdown-extra'],
 }
