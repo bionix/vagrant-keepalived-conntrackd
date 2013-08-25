@@ -1,3 +1,9 @@
+Package { ensure => "installed" }
+
+$packages = [ "vim" ]
+package { $packages: }
+
+
 node /entry1/ {
   include keepalived
 

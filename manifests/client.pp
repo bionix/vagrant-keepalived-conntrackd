@@ -1,6 +1,6 @@
 Package { ensure => "installed" }
 
-$packages = [ "telnet", "ifupdown-extra" ]
+$packages = [ "telnet", "ifupdown-extra", "vim" ]
 package { $packages: }
 
 network_route { '192.168.55.0':
